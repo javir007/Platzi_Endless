@@ -8,12 +8,6 @@ AnimatorController:
   m_Name: Player_AC
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Grounded
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: Jump
     m_Type: 9
     m_DefaultFloat: 0
@@ -32,8 +26,8 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: posX
-    m_Type: 1
+  - m_Name: isGrounded
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -187,7 +181,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
+    m_ConditionEvent: isGrounded
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102468662631702118}
@@ -196,8 +190,8 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.10061991
-  m_TransitionOffset: 0.36636186
-  m_ExitTime: 0.7862516
+  m_TransitionOffset: 0.27999747
+  m_ExitTime: 0.78625166
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -342,7 +336,7 @@ AnimatorStateMachine:
     m_Position: {x: 132, y: 156, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102912157060404176}
-    m_Position: {x: -132, y: 24, z: 0}
+    m_Position: {x: -120, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102468662631702118}
     m_Position: {x: 396, y: 156, z: 0}
@@ -354,7 +348,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 156, y: 24, z: 0}
-  m_EntryPosition: {x: 420, y: 0, z: 0}
+  m_EntryPosition: {x: 408, y: 0, z: 0}
   m_ExitPosition: {x: -120, y: 156, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102468662631702118}
