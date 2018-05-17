@@ -11,9 +11,12 @@ public class CameraFollow : MonoBehaviour {
 
 	private void LateUpdate()
 	{
-        Vector3 newPosition = target.position + offset;
-        newPosition.x = 0;
-        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime);
+        if(GameManager.Instance.IsGameStarted){
+            Vector3 newPosition = target.position + offset;
+            newPosition.x = 0;
+            transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime);
+        }
+
 	}
 
 }
