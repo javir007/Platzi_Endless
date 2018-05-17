@@ -109,4 +109,18 @@ public class PlayerMotor : MonoBehaviour {
         Ray groundRay = new Ray(new Vector3(controller.bounds.center.x, (controller.bounds.center.y - controller.bounds.extents.y) + 0.2f, controller.bounds.center.z), Vector3.down);
         return Physics.Raycast(groundRay, 0.2f + 0.1f);
     }
+
+	private void OnControllerColliderHit(ControllerColliderHit hit)
+	{
+        if(hit.gameObject.CompareTag("Obstacle")){
+            //Morir el personaje
+            Crash();
+        }
+	}
+
+    void Crash(){
+        anim.SetTrigger("Death");
+        isRunning = false;
+
+    }
 }
