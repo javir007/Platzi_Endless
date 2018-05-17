@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -12,10 +13,15 @@ public class GameManager : MonoBehaviour {
     private bool isGameStarted = false;
 
     //puntuacion
-
     private float score;
     private float coins;
     private float finalScore;
+
+    //Text
+
+    public Text scoreText;
+    public Text coinsText;
+
 
 
 
@@ -33,14 +39,14 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        UpdateScores();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if(isGameStarted){
             score += (Time.deltaTime * 2);
-            print("la puuntuacion actual es: " + score.ToString("0"));
+            scoreText.text = score.ToString("0");
         }
 	}
 
@@ -52,6 +58,7 @@ public class GameManager : MonoBehaviour {
     public void GetCollectable(int collectableAmnt){
         coins++;
         score += collectableAmnt;
+        UpdateScores();
     }
 
     public void GameOver(){
@@ -65,5 +72,10 @@ public class GameManager : MonoBehaviour {
 
     void LoadScene(){
         SceneManager.LoadScene(0);
+    }
+
+    public void UpdateScores(){
+        scoreText.text = score.ToString("0");
+        coinsText.text = coins.ToString("0");
     }
 }
